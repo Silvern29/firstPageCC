@@ -98,14 +98,21 @@ main {
     min-height: 100vh;
 }
 
+.textabout {
+    min-width: 500px;
+    max-width: 600px;
+}
+
 #about {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 #about img {
     height: 300px;
-    padding: 50px;
+    padding-top: 50px;
 }
 
 h2 {
@@ -151,8 +158,19 @@ footer {
 
 footer p {
     padding: 5rem;
-    font-size: 4rem;
+    font-size: 2rem;
     font-weight: bold;
     text-align: center;
     color: rgb(63, 63, 63);
+}
+
+@media (max-width: 1000px) {
+    html {
+        font-size: 10px;
+    }
+
+    #about, footer {
+        flex-direction: column;
+        text-align: center;
+    }
 }
