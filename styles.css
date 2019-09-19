@@ -99,8 +99,8 @@ main {
 }
 
 .textabout {
-    min-width: 500px;
-    max-width: 600px;
+    min-width: 40vw;
+    max-width: 50vw;
 }
 
 #about {
@@ -169,8 +169,5 @@ footer p {
         font-size: 10px;
     }
 
-    #about, footer {
-        flex-direction: column;
-        text-align: center;
-    }
+    
 }
