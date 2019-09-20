@@ -3,78 +3,109 @@
 <html lang="de">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link href="styles.css" rel="stylesheet">
     <title>Florian Redlinghaus</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
-<body id="top">
-    <header>
-        <h1>Himmelreich Kleinwalsertal</h1>
-    </header>
+<body>
+<header id="top">
+    <h1>Himmelreich Kleinwalsertal</h1>
+</header>
 
-    <nav>
+<nav>
+    <ul>
+        <li>
+            <a class="navLink" href="#top" id="toplnk" onclick="meineFunktion('#toplnk')">HOME</a>
+        </li>
+        <li>
+            <a class="navLink" href="#about" id="aboutlnk" onclick="meineFunktion('#aboutlnk')">ÜBER MICH</a>
+        </li>
+        <li>
+            <a class="navLink" href="#hobbies" id="hobbieslnk" onclick="meineFunktion('#hobbieslnk')">HOBBYS</a>
+        </li>
+        <li>
+            <a class="navLink" href="#contact" id="contactlnk" onclick="meineFunktion('#contactlnk')">KONTAKT</a>
+        </li>
+    </ul>
+</nav>
+
+<main>
+    <div id="about">
+        <div class="textabout">
+            <h2>Über mich</h2>
+            <p>Ich lebe mit meiner Frau und unseren 2 Kindern im Kleinwalsertal. Oberhalb von Hirschegg mit Blick
+                über
+                das Tal liegt unser Haus Himmelreich mit 4 Ferienwohnungen. Unser Haus liegt im Winter direkt an der
+                Piste. Wir wandern gerne mit unseren 2 Hunden durch die Berge. Seit einiger Zeit fotografiere ich
+                privat
+                wie beruflich.</p>
+        </div>
+        <div>
+            <img src="me.jpg">
+        </div>
+    </div>
+    <div id="hobbies">
+        <h2>Meine Hobbys</h2>
         <ul>
             <li>
-                <a href="#top">HOME</a>
+                <img id="hike" src="wandern.jpg">
+                <p>Wandern</p>
             </li>
             <li>
-                <a href="#about">ÜBER MICH</a>
+                <img id="board" src="boarden.jpg">
+                <p>Snowboarden</p>
             </li>
             <li>
-                <a href="#hobbies">HOBBYS</a>
+                <img id="bike" src="biken.jpg">
+                <p>Mountainbiken</p>
             </li>
             <li>
-                <a href="#contact">KONTAKT</a>
+                <img id="foto" src="fotografieren.jpg">
+                <p>Fotografieren</p>
             </li>
         </ul>
-    </nav>
+    </div>
+</main>
 
-    <main>
-        <div id="about">
-            <div class="textabout">
-                <h2>Über mich</h2>
-                <p>Ich lebe mit meiner Frau und unseren 2 Kindern im Kleinwalsertal. Oberhalb von Hirschegg mit Blick
-                    über
-                    das Tal liegt unser Haus Himmelreich mit 4 Ferienwohnungen. Unser Haus liegt im Winter direkt an der
-                    Piste. Wir wandern gerne mit unseren 2 Hunden durch die Berge. Seit einiger Zeit fotografiere ich
-                    privat
-                    wie beruflich.</p>
-            </div>
-            <div>
-                <img src="me.jpg">
-            </div>
-        </div>
-        <div id="hobbies">
-            <h2>Meine Hobbys</h2>
-            <ul>
-                <li>
-                    <img src="wandern.jpg">
-                    <p>Wandern</p>
-                </li>
-                <li>
-                    <img src="boarden.jpg">
-                    <p>Snowboarden</p>
-                </li>
-                <li>
-                    <img src="biken.jpg">
-                    <p>Mountainbiken</p>
-                </li>
-                <li>
-                    <img src="fotografieren.jpg">
-                    <p>Fotografieren</p>
-                </li>
-            </ul>
-        </div>
-    </main>
+<footer id="contact">
+    <p>Florian Redlinghaus</p>
+    <p>florian@redlinghaus.at</p>
+    <a href="https://firstpagecc.redlinghaus.at">>> Diese Seite online mit Bildern</a>
+    <a href="https://github.com/Silvern29/firstPageCC">>> Diese Seite auf Github</a>
+</footer>
 
-    <footer id="contact">
-        <p>Florian Redlinghaus</p>
-        <p>florian@redlinghaus.at</p>
-        <a href="https://firstpagecc.redlinghaus.at">>> Diese Seite online mit Bildern</a>
-        <a href="https://github.com/Silvern29/firstPageCC">>> Diese Seite auf Github</a>
-    </footer>
 </body>
+
+<script>
+    alert("Klicke auf eines der Bilder zum vergrößern!");
+
+
+    function meineFunktion(idName) {
+        var clrGreen = document.querySelector(".green");
+
+        if (clrGreen != null) {
+            clrGreen.classList.remove("green");
+        }
+
+        var lnk = document.querySelector(idName);
+        lnk.classList.add("green");
+    }
+
+    $("#hike").click(function () {
+        $("#hike").toggleClass("zoom");
+    })
+    $("#board").click(function () {
+        $("#board").toggleClass("zoom");
+    })
+    $("#bike").click(function () {
+        $("#bike").toggleClass("zoom");
+    })
+    $("#foto").click(function () {
+        $("#foto").toggleClass("zoom");
+    })
+</script>
 
 </html>

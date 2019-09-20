@@ -187,7 +187,18 @@ footer p, footer a {
     width: 50%;
 }
 
+.zoom {
+    height: 500px;
+}
 
+.green {
+    background-color: #007e1b;
+    color: white;
+}
+
+.noBackground {
+    background-color: transparent;
+}
 
 @media (max-width: 1000px) {
     html {
