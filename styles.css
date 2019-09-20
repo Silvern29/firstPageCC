@@ -53,8 +53,10 @@ p {
 }
 
 header {
+    position: relative;
+    top: 0;
     height: 100vh;
-    background: url("header.jpeg") no-repeat center;
+    background: url("header.jpeg") no-repeat;
     background-size: 100% auto;
 }
 
@@ -62,8 +64,9 @@ header h1 {
     color: rgba(204, 204, 204, 0.7);
     font-size: 6rem;
     text-align: right;
-    padding-top: 20rem;
-    padding-right: 10rem;
+    top: 20rem;
+    right: 10rem;
+    position: absolute;
 }
 
 nav {
@@ -147,6 +150,7 @@ main ul li {
 
 main ul li img {
     height: 300px;
+    cursor: pointer;
 }
 
 main ul li p {
@@ -162,7 +166,6 @@ main ul li p {
 footer {
     background-color: #007e1b;
     height: 100vh;
-    padding-top: 10rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -196,12 +199,36 @@ footer p, footer a {
     color: white;
 }
 
-.noBackground {
-    background-color: transparent;
+@media (max-width: 1500px) {
+    html {
+        font-size: 14px;
+    }
+
+    header {
+        height: 1000px;
+    }
 }
 
 @media (max-width: 1000px) {
     html {
         font-size: 10px;
+    }
+
+    header {
+        height: 500px;
+    }
+}
+
+@media (max-width: 590px) {
+    html {
+        font-size: 8px;
+    }
+
+    header {
+        background-size: auto 100%;
+    }
+
+    header h1 {
+        font-size: 3rem;
     }
 }
